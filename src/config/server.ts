@@ -221,12 +221,12 @@ app.post("/rota-recebimento-mercado-pago-joao", async (req: any, res: any) => {
                 console.log('storetransaction_amount_id', response.data.transaction_amount);
 
                 //creditar de acordo com o store_id (um para cada maq diferente)
-                if (response.data.store_id == '72418588') {
+                if (response.data.store_id == '68826545') {
                     if (tempoOffline(ultimoAcessoMaquina01) >= 10) {
                         console.log("Efetuando estorno - Máquina Offline!");
                         estornar(req.query.id, mercadoPagoToken!, "Máquina Offline");
                     } else {
-                        console.log("Creditando pix na máquina 1. store_id(72418588)")
+                        console.log("Creditando pix na máquina 1. store_id(68826545)")
                         //escolhendo o compartimento pra liberar de acordo com o preço
                         valorDoPixMaquina01 = response.data.transaction_amount;
                         if (response.data.transaction_amount) {
